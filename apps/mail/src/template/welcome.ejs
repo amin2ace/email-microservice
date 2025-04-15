@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome Email</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    .email-container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .content {
+      padding: 20px;
+    }
+    .content h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .content p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .footer {
+      background-color: #f4f4f9;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      color: #777;
+    }
+    .footer a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <h1>Welcome to <%= appName %> App!</h1>
+    </div>
+    <div class="content">
+      <p>Dear, <%= userName %></p>
+      <p>Hi there,</p>
+      <p>Thank you for signing up! We’re excited to have you on board. Our app is designed to make your experience easy and enjoyable.</p>
+      <p>To get started, simply log in and explore all the features we offer. If you have any questions or need help, feel free to reach out.</p>
+      <p>We look forward to helping you on your journey!</p>
+      <p>Best,</p>
+      <p><strong>[<%= appName %>]</strong><br>[<%= from %>]</p>
+    </div>
+    <div class="footer">
+      <p>&copy; <%= new Date().getFullYear() %> <%= appName %>. All rights reserved.</p>
+      <p><a href="<%= appUrl %>">Visit Our Website</a></p>
+    </div>
+  </div>
+</body>
+</html>
