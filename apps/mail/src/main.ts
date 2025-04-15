@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { MailModule } from './mail.module';
-import { Logger } from '@nestjs/common';
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestMicroserviceOptions } from '@nestjs/common/interfaces/microservices/nest-microservice-options.interface';
 import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
@@ -19,6 +19,11 @@ async function bootstrap() {
     },
   );
 
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+    }),
+  );
   await app.listen();
 }
 
