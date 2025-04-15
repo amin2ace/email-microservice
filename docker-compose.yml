@@ -1,0 +1,23 @@
+##########################################################################
+##########################################################################
+###                                                                    ###
+### Estimated download size for pulling image from dockerhub is ~12 MB ###
+###                                                                    ###
+##########################################################################
+##########################################################################
+
+services:
+  mailpit:
+    image: axllent/mailpit:v1.24
+    container_name: mock-mail-mailpit
+    ports:
+      - '1025:1025' # SMTP port (localhost:1025)
+      - '8025:8025' # Web UI port (localhost:8025)
+    hostname: '127.0.0.1'
+    restart: always
+    volumes:
+      # Volume name: (data:) ----- dir: (/data)
+      - data:/data
+
+volumes:
+  data:
